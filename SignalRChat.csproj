@@ -110,6 +110,8 @@
     <Content Include="Content\emojionearea.min.css" />
     <Content Include="Content\index.css" />
     <Content Include="Content\style.css" />
+    <Content Include="images\body.jpg" />
+    <Content Include="images\body2.jpg" />
     <Content Include="images\hero-bg.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Scripts\custom-scripts.js" />
