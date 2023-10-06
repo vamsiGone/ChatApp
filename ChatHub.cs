@@ -68,9 +68,9 @@ namespace SignalRChat
                 string ImageName = ConnC.GetColumnVal(query, "Photo");
 
                 if (ImageName != "")
-                    RetimgName = "images/DP/" + ImageName;
+                    RetimgName = "images/" + ImageName;
             }
-            catch (Exception ex)
+            catch (Exception)
             { }
             return RetimgName;
         }
