@@ -55,63 +55,70 @@
     </style>
 </head>
 <body>
-     <form id="form1" runat="server">  
-          <video id="video-background" autoplay loop muted>
-        <source src="images/BackVideo.webm" type="video/webm">     
-    </video>
-   <%-- <video src="images/BackVideo.webm" controls="controls" />"--%>
-    <div id="content"><div class="container">
+    <form id="form1" runat="server">
+        <video id="video-background" autoplay loop muted>
+            <source src="./images/BackVideo.webm" type="video/webm">
+            <source src="./images/Register.mp4" type="video/mp4">
+            
+        </video>
+         <%-- <div id="video-background">
+        <!-- You can use an <iframe> or <video> here, or even a background image -->
+        <!-- Example using an iframe (e.g., YouTube video) -->
+        <iframe src="https://www.youtube.com/embed/your-video-id?autoplay=1&loop=1&controls=0" frameborder="0" allowfullscreen></iframe>
+    </div>--%>
+        <div id="content">
+            <div class="container">
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
+                <!-- Outer Row -->
+                <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                  
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="txtEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." required="required" runat="server">
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row">
+                                    <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                    <div class="col-lg-6">
+                                        <div class="p-5">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user"
+                                                    id="txtEmail" aria-describedby="emailHelp"
+                                                    placeholder="Enter Email Address..." required="required" runat="server">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="txtPassword" placeholder="Password" required="required" runat="server">
+                                            </div>
+
+                                            <asp:Button ID="btnSignIn" runat="server" OnClick="btnSignIn_Click" Text="Login" CssClass="btn btn-primary btn-user btn-block" />
+
+                                            <hr>
+                                            <div class="text-center">
+                                                <a class="small" href="forgot-password.html">Forgot Password?</a><br />
+                                                <br />
+                                                <a class="small" href="Register.aspx">Create an Account!</a>
+                                            </div>
+                                            <div class="text-center">
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="txtPassword" placeholder="Password" required="required" runat="server">
-                                        </div>
-                                 
-                                        <asp:Button ID="btnSignIn" runat="server" OnClick="btnSignIn_Click" Text="Login" CssClass="btn btn-primary btn-user btn-block" />                    
-                                                          
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a><br /><br />
-                                           <a class="small" href="Register.aspx">Create an Account!</a>
-                                    </div>
-                                    <div class="text-center">
-                                     
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-
-    </div>
-         </form>
+    </form>
 
     <!-- Bootstrap core JavaScript-->
     <script src="Plugins/jquery.min.js"></script>

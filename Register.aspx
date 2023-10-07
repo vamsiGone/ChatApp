@@ -125,7 +125,8 @@
 <body>
     <form id="form1" runat="server">
         <video id="video-background" autoplay loop muted>
-            <source src="images/BackVideo.webm" type="video/webm">
+          <%--  <source src="images/BackVideo.webm" type="video/webm">--%>
+              <source src="./images/Register.mp4" type="video/mp4">
         </video>
         <%-- <video src="images/BackVideo.webm" controls="controls" />"--%>
         <div id="content">
