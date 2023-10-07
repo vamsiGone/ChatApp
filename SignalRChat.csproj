@@ -106,14 +106,22 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Content\all.min.css" />
     <Content Include="Content\custom-styles.css" />
     <Content Include="Content\emojionearea.min.css" />
     <Content Include="Content\index.css" />
+    <Content Include="Content\sb-admin-2.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="images\BackVideo.webm" />
     <Content Include="images\body.jpg" />
     <Content Include="images\body2.jpg" />
     <Content Include="images\hero-bg.jpg" />
+    <Content Include="images\Register.mp4" />
     <Content Include="Index.aspx" />
+    <Content Include="Plugins\bootstrap.bundle.min.js" />
+    <Content Include="Plugins\jquery.easing.min.js" />
+    <Content Include="Plugins\jquery.min.js" />
+    <Content Include="Plugins\sb-admin-2.min.js" />
     <Content Include="Scripts\custom-scripts.js" />
     <Content Include="Scripts\date.format.js" />
     <None Include="Properties\PublishProfiles\Chit-ChatBot - Web Deploy.pubxml" />

@@ -81,7 +81,7 @@ header .navbar {
 
 .hero-section {
   height: 100vh;
-  background-image: url("../images/hero-bg.jpg");
+  background-image: url("../images/body2.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -119,6 +119,7 @@ header .navbar {
   cursor: pointer;
   font-weight: 500;
   transition: 0.2s ease;
+  text-decoration:none;
 }
 
  .button:hover {
