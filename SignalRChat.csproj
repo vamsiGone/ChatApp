@@ -116,7 +116,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Scripts\custom-scripts.js" />
     <Content Include="Scripts\date.format.js" />
-    <None Include="Properties\PublishProfiles\ChatAppilcationBot - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Chit-ChatBot - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

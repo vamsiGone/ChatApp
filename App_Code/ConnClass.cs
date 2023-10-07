@@ -14,7 +14,7 @@ namespace SignalRChat
         public SqlDataAdapter sda;
         public SqlDataReader sdr;
         public DataSet ds = new DataSet();
-        public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ToString());
+        public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnectionStrings"].ToString());
 
         public bool IsExist(string Query)
         {

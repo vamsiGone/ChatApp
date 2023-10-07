@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "mssql1": {
+    "mssql2": {
       "secretStore": "AzureAppSettings",
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/nokiadbserver/databases/Nokia_db",
       "type": "mssql.azure",
-      "connectionId": "SQLConnectionString"
+      "connectionId": "SQLConnectionStrings"
     }
   }
 }
