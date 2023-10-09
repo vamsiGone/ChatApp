@@ -10,9 +10,6 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
-
-
-
     <script src="Scripts/jQuery-3.2.1.min.js"></script>
     <script src="Scripts/jquery.signalR-2.2.2.min.js"></script>
     <script src="Scripts/date.format.js"></script>
@@ -550,7 +547,7 @@ function IsImageFile(fileF) {
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="content-wrapper">
-
+            <!--Hearder-->
             <header class="main-header" style="background: #bedaeb">
                 <!-- Logo -->
                 <a href="#" class="logo">
@@ -596,11 +593,12 @@ function IsImageFile(fileF) {
                     </div>
                 </nav>
             </header>
+              <!--Hearder-->
 
             <div class="row">
-
+                   <!-- DIRECT CHAT PRIMARY -->
                 <div class="col-md-8">
-                    <!-- DIRECT CHAT PRIMARY -->
+                 
                     <div class="box box-primary direct-chat direct-chat-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title" style="color: dimgrey;">Welcome to Discussion Room <span id='spanUser'></span></h3>
@@ -662,9 +660,11 @@ function IsImageFile(fileF) {
                         </div>
                         <!-- /.box-footer-->
                     </div>
-                    <!--/.direct-chat -->
+                 
                 </div>
-                <!-- /.col -->
+                   <!--/.direct-chat -->
+
+                <!-- online users -->
                 <div class="col-md-4">
 
                     <div class="box box-solid box-primary">
@@ -681,8 +681,10 @@ function IsImageFile(fileF) {
 
 
                 </div>
+                   <!-- /online users -->
 
 
+                    <!--private-chat -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row" id="PriChatDiv">
@@ -692,9 +694,9 @@ function IsImageFile(fileF) {
 
 
 
-                        <!--/.private-chat -->
                     </div>
-                </div>
+                </div>               
+                        <!--/.private-chat -->
 
                 <!-- /.col -->
 

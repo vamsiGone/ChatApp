@@ -60,7 +60,7 @@ namespace SignalRChat
             //path = serverPath + path;
             if (FileUpload1.HasFile)
             {
-                string FileWithPat = serverPath + "images/" + FileUpload1.FileName;
+                string FileWithPat = serverPath + "images\\" + FileUpload1.FileName;
 
                 FileUpload1.SaveAs(FileWithPat);
                 SD.Image img = SD.Image.FromFile(FileWithPat);
