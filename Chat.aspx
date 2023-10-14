@@ -189,7 +189,7 @@
             }
 
 
-            chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message, userimg, CurrentDateTime) {
+        chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message, userimg, CurrentDateTime) {
 
                 var ctrId = 'private_' + windowId;
                 if ($('#' + ctrId).length == 0) {
