@@ -1,12 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Chat.aspx.cs" Inherits="SignalRChat.Chat" %>
-
-<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>--%>
+﻿
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>SignalR Chat : Chat Page</title>
-
+<head>
+    <title>
+        SignalR Chat : Chat Page
+    </title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
@@ -46,8 +45,8 @@
                 $("#MsgCountMain").attr("title", '0 New Messages');
             });
 
-            // Diplay Image Preview on File Upload 
-            $(document).on('change', '#<%# FileUpload1.ClientID%>', function (e) {
+            // Diplay Image Preview on File Upload
+            $(document).on('change', '#FileUpload1', function (e) {
 
                 var tmppath = URL.createObjectURL(e.target.files[0]);
                 $("#ImgDisp").attr('src', tmppath);
@@ -80,7 +79,7 @@
 
         function registerEvents(chatHub) {
 
-            var name = '<%# this.UserName %>';
+            var name = 'vamsi';
 
             if (name.length > 0) {
                 chatHub.server.connect(name);
@@ -252,7 +251,7 @@
             if (userId == id) {
 
                 code = $('<div class="box-comment">' +
-                    '<img class="img-circle img-sm" src="images/' + UserImage + '" alt="User Image" />' +
+                    '<img class="img-circle img-sm" src="images/'+ UserImage + '" alt="User Image" />' +
                     ' <div class="comment-text">' +
                     '<span class="username">' + name + '<span class="text-muted pull-right">' + date + '</span>  </span></div></div>');
 
@@ -427,7 +426,7 @@
                 }
             });
 
-            // Clear Message Count on Mouse over           
+            // Clear Message Count on Mouse over
             $div.find("#divMessage").mouseover(function () {
 
                 $("#MsgCountP").html('0');
@@ -458,7 +457,7 @@ function uploadComplete(sender, args) {
         imgDisplay.src = img.src;
     };
 
-    imgDisplay.src = "<%# ResolveUrl(UploadFolderPath) %>" + args.get_fileName();
+    imgDisplay.src = "/Uploads/" + args.get_fileName();
 var chatHub = $.connection.chatHub;
 var userName = $('#hdUserName').val();
 var date = GetCurrentDateTime(new Date());
@@ -540,12 +539,63 @@ function IsImageFile(fileF) {
 
     </script>
 
+    <link href="/WebResource.axd?d=UT1Cj7SEzX8U-GEgOjD-q64ui2HtYO7JGbBmwLiBEYGDjRemOEZnhk0h_rkQvpZRDyLk8mP8Mylkf0ovgECp_MENgja39aKU-6uD8SjLBVWaD6bpnJHsktR2L839JDZvQm5AXemBi0300KPBURx_Gg2&amp;t=636060268340000000" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
-    <form id="form1" runat="server">
+    <form method="post" action="./Chat.aspx" id="form1" enctype="multipart/form-data">
+        <div class="aspNetHidden">
+            <input type="hidden" name="AsyncFileUpload1_ClientState" id="AsyncFileUpload1_ClientState" value="" />
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ehmJyNb6qzsx/jUror4zGijU+zO4urM5/JT8yD9AOMWDNV19uuS3N8XHrZCqp5K5XYy4nlAU2ChuEHa1LZen5yiMWjYPCtZ+GQc+mdSTbT/paA8HjbM/yXgbDYPDoul6G7E/UlmdFhlCIY+uNeaG5LambW5kf8jgnOv1uMmxqyMgbpn1fXDRctVoVfsnwM7gY5FOkk0XZp05y5G78r00bm7rgSW0gdgNjhOXUt6MSeauJds05zgYv/4UT1zlBSjW8HmUIs8alCnm0e5qShYY2W11vMZLXQPHsGUm1fE5uATIoEGXB0n5rzI9CkohLYmOl0+RKKeLitw4j16kVg4+usBKSKjP0Pa2DPy9eA6APL5dYF8Ro+N3/7TUkUh3dp8W" />
+        </div>
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+        </script>
+
+
+        <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZObVPmL-H96lT48CaOCCV4qhmLZm2kABFmwhhnO-Vnwp8oAjxkOnxnN1cqKsMLwvtA2&amp;t=638254348492313028" type="text/javascript"></script>
+
+
+        <script src="/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQuNsTVcx1utwOcHLwNE63F9wnwTv0AUt3C_xgma9sXxxtymXHepe0UN4bdCckUBIeLF4owqTpNLy4sw7pKq1J0kq_MnMXljkUJtT-gl9HfdGKq-lKt8ccuBYJsfaCCRMVs6bTw-j9OSqAC77EdLjEF81&amp;t=5505d0d8" type="text/javascript"></script>
+        <script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+        </script>
+
+        <script src="/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1tWiyMcR2z-n352kRUk8UVv83DWpHFn4RleuVdBnVo5HOsPgyYTydOAxrX9QucHum52LnzZUR_WhmMWEkIsAr-mI8sUoEk9gpqX419eBoPkrGiOg0U0bVBM1r9Nfv1hHo4qmYef4K1Hv-9wSpKwkaQDlgy-nwVf1LolMvBuDyvxSX0&amp;t=5505d0d8" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=pVdHczR8HTv0TYtXLibFoLKh4N6Sqt6Rl9iuBwF5ZSw0owXwRwLxuZFqu02MNsYfVbPwEJuhPp3G9rFaPGn-R3RRkOMOJrLxv538b7siGj96FXRTcmYKaJs-fKp_vowGGph9colO1IT8FPSbP-ljGQ2&amp;t=ffffffffcfeeeb28" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=LpGQnoKUSgO3ODsBUs8GfSgjGu4AiDlBiZFsHO85lCiJC1B2JagYczYPRxZKAIA5FpOv9mBudkGjlCrdVIv-7wcGnQUCnWdh2yNUuTFuIh8X6FxdurFKCaYrnL4QHR7d0&amp;t=ffffffffcfeeeb28" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=-qISl4-OkT-7X02E4FisrznZDAex4tB1K6DGwB8dsAhE59-XjcXvdZjc0nCwroALgxkm5Fs4nZaAdUpg9WIBIvgMN2X8fQOXcnolD4qeqcZZm9TnXuMW3XhKTMnXvlZ_0&amp;t=ffffffffcfeeeb28" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=VXG5HWKmJ5VfT6XbkUxKRkks-8E3qEDVjYWzJwgire-MZG42_h1_FzsOBMDkOvbj3zZ6j20uxj_C94Qem8Gb-Baa5wYklkzVycxnYjMoK2QJ_2GF0X8T8YS3vNj-wniO0&amp;t=ffffffffcfeeeb28" type="text/javascript"></script>
+        <script src="/ScriptResource.axd?d=vNpnbyvTQJ56YnuXSyxYBAWcmsrPz4myoYGlXFkjJtI_N6OiKMRPR0zJM0ivUsYdOl6VDTdAWn9T5Vt45T_Tz4BPsQopMZcC_SEDLGrUlJnZJF0eBICtTjXtW6xdWcm80&amp;t=ffffffffcfeeeb28" type="text/javascript"></script>
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="008BFBC7" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="gC/k2FvzPXzLi61eDUEHrx/Ur67tyZYx/Dtx1uOUiSW4jJ4IBN7QRfz30g/sSj6RLgC5b+UySLdclgPo/jy19uZxb1okCsd6iHT+1TEwkYcPo1hUTAKJ2o9ZRMfi/TISuw4JmL2MyZpdLLZdYeheQB4ApY24ENoQr1F8Npj/pGQ=" />
+        </div>
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel2','UpdatePanel2','tUpdatePanel1','UpdatePanel1'], [], ['btnChangePicModel','btnChangePicModel'], 90, '');
+//]]>
+        </script>
+
         <div class="content-wrapper">
             <!--Hearder-->
             <header class="main-header" style="background: #bedaeb">
@@ -561,19 +611,18 @@ function IsImageFile(fileF) {
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <!-- Messages: style can be found in dropdown.less-->
-
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="<%= UserImage %>" class="user-image" alt="User Image" />
-                                    <span class="hidden-xs"><%= this.UserName %></span>
+                                    <img src="/images/nat.jpg" class="user-image" alt="User Image" />
+                                    <span class="hidden-xs">vamsi</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="<%= UserImage %>" class="img-circle" alt="User Image" />
+                                        <img src="/images/nat.jpg" class="img-circle" alt="User Image" />
                                         <p style="color: #000000;">
-                                            <%= UserName %>
+                                            vamsi
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
@@ -582,7 +631,7 @@ function IsImageFile(fileF) {
                                             <a class="btn btn-default btn-flat" data-toggle="modal" href="#ChangePic">Change Picture</a>
                                         </div>
                                         <div class="pull-right">
-                                            <asp:Button ID="btnSignOut" runat="server" CssClass="btn btn-default btn-flat" Text="Sign Out" OnClick="btnSignOut_Click" />
+                                            <input type="submit" name="btnSignOut" value="Sign Out" id="btnSignOut" class="btn btn-default btn-flat" />
                                         </div>
                                     </li>
                                 </ul>
@@ -593,12 +642,12 @@ function IsImageFile(fileF) {
                     </div>
                 </nav>
             </header>
-              <!--Hearder-->
+            <!--Hearder-->
 
             <div class="row">
-                   <!-- DIRECT CHAT PRIMARY -->
+                <!-- DIRECT CHAT PRIMARY -->
                 <div class="col-md-8">
-                 
+
                     <div class="box box-primary direct-chat direct-chat-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title" style="color: dimgrey;">Welcome to Discussion Room <span id='spanUser'></span></h3>
@@ -642,28 +691,24 @@ function IsImageFile(fileF) {
                                     <input type="button" class="btn btn-primary btn-flat" id="btnSendMsg" value="send" />
 
                                 </span>
-                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <div id="UpdatePanel2">
 
-                                    <%-- <Triggers>
-                                    <asp:PostBackTrigger ControlID="btnFile" />
-                                </Triggers>--%>
-                                    <ContentTemplate>
-                                        <span class="upload-btn-wrapper">
-                                            <button id="btnFile" class="btn btn-default btn-flat"><i class="glyphicon glyphicon-paperclip"></i></button>
-                                            <ajaxToolkit:AsyncFileUpload OnClientUploadComplete="uploadComplete" runat="server" ID="AsyncFileUpload1"
-                                                ThrobberID="imgLoader" OnUploadedComplete="FileUploadComplete" OnClientUploadStarted="uploadStarted" />
-                                        </span>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
+                                    <span class="upload-btn-wrapper">
+                                        <button id="btnFile" class="btn btn-default btn-flat"><i class="glyphicon glyphicon-paperclip"></i></button>
+                                        <div id="AsyncFileUpload1">
+                                            <input type="hidden" name="AsyncFileUpload1$ctl00" id="AsyncFileUpload1_ctl00" /><div id="AsyncFileUpload1_ctl01"><input name="AsyncFileUpload1$ctl02" type="file" id="AsyncFileUpload1_ctl02" style="width:355px;" /></div>
+                                        </div>
+                                    </span>
+
+                                </div>
                             </div>
                             <img id="imgDisplay" src="" class="user-image" style="height: 100px;" />
                         </div>
                         <!-- /.box-footer-->
                     </div>
-                 
-                </div>
-                   <!--/.direct-chat -->
 
+                </div>
+                <!--/.direct-chat -->
                 <!-- online users -->
                 <div class="col-md-4">
 
@@ -681,10 +726,8 @@ function IsImageFile(fileF) {
 
 
                 </div>
-                   <!-- /online users -->
-
-
-                    <!--private-chat -->
+                <!-- /online users -->
+                <!--private-chat -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row" id="PriChatDiv">
@@ -695,14 +738,10 @@ function IsImageFile(fileF) {
 
 
                     </div>
-                </div>               
-                        <!--/.private-chat -->
-
+                </div>
+                <!--/.private-chat -->
                 <!-- /.col -->
-
-
                 <!-- /.col -->
-
                 <!-- /.col -->
             </div>
             <!-- /.row -->
@@ -723,58 +762,54 @@ function IsImageFile(fileF) {
                     <div class="modal-body">
                         <div class="container">
 
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <div id="UpdatePanel1">
 
-                                <Triggers>
-                                    <asp:PostBackTrigger ControlID="btnChangePicModel" />
-                                </Triggers>
-                                <ContentTemplate>
 
-                                    <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered table-striped table-hover table-responsive" style="width: 600px">
+
+                                            <tr>
+
+                                                <div class="col-md-12">
+                                                <td class="text-primary col-md-4" style="font-weight: bold;">
+                                                    <img id="ImgDisp" src="" class="user-image" style="height: 100px;" />
+                                                </td>
+                                                <td class="text-primary col-md-4" style="font-weight: bold;">
+                                                    <input type="file" name="FileUpload1" id="FileUpload1" class="btn btn-default" />
+                                                </td>
+                                                <td class="col-md-4">
+
+                                                    <input type="submit" name="btnChangePicModel" value="Update Picture" id="btnChangePicModel" class="btn btn-flat btn-success" />
+
+
+                                                </td>
+                                    </div>
+
+                                    </tr>
+
+
+                                    <tr>
                                         <div class="col-md-12">
-                                            <table class="table table-bordered table-striped table-hover table-responsive" style="width: 600px">
 
-                                                <tr>
+                                        <td class="col-md-12" colspan="3"></td>
+                                </div>
 
-                                                    <div class="col-md-12">
-                                                        <td class="text-primary col-md-4" style="font-weight: bold;">
-                                                            <img id="ImgDisp" src="" class="user-image" style="height: 100px;" />
-                                                        </td>
-                                                        <td class="text-primary col-md-4" style="font-weight: bold;">
-                                                            <asp:FileUpload ID="FileUpload1" runat="server" class="btn btn-default" />
-                                                        </td>
-                                                        <td class="col-md-4">
-
-                                                            <asp:Button ID="btnChangePicModel" runat="server" Text="Update Picture" CssClass="btn btn-flat btn-success" OnClick="btnChangePicModel_Click" />
+                                </tr>
 
 
-                                                        </td>
-                                                    </div>
-
-                                                </tr>
-
-
-                                                <tr>
-                                                    <div class="col-md-12">
-
-                                                        <td class="col-md-12" colspan="3"></td>
-                                                    </div>
-
-                                                </tr>
-
-
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    </div>
-                </div>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
+                                </table>
+                            </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
 
         <div class="modal fade" id="ShowPictureModal" role="dialog">
@@ -821,6 +856,15 @@ function IsImageFile(fileF) {
             });
         </script>
 
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.AsyncFileUpload, {"clientStateField":$get("AsyncFileUpload1_ClientState"),"completeBackColor":"Lime","errorBackColor":"Red","formName":"form1","hiddenField":$get("AsyncFileUpload1_ctl00"),"inputFile":$get("AsyncFileUpload1_ctl02"),"postBackUrl":"/Chat.aspx","uploadingBackColor":"White"}, {"uploadComplete":uploadComplete,"uploadStarted":uploadStarted}, null, $get("AsyncFileUpload1"));
+});
+//]]>
+        </script>
     </form>
 </body>
 </html>
