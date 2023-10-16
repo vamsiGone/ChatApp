@@ -24,7 +24,7 @@ namespace SignalRChat
                 string UserName = ConnC.GetColumnVal(Query, "UserName");
                 Session["UserName"] = UserName;
                 Session["Email"] = txtEmail.Value;
-                Response.Redirect("Chat.aspx");
+                Response.Redirect("Message.aspx");
             }
             else
                 txtEmail.Value = "Invalid Email or Password!!";

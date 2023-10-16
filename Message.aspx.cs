@@ -21,7 +21,7 @@ namespace SignalRChat
             else
                 Response.Redirect("Login.aspx");
 
-            //this.Header.DataBind();
+            this.Header.DataBind();
         }
     }
 }
