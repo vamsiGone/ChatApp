@@ -929,11 +929,11 @@ message-area
         function AddMessage(userName, message, time, userimg) {
 
             var CurrUser = $('#hdUserName').val();
-            var Side = 'repaly';
+            var Side = 'sender';
            /* var TimeSide = 'left';*/
 
             if (CurrUser == userName) {
-                Side = 'sender';
+                Side = 'repaly';
              /*   TimeSide = 'right';*/
 
             }
@@ -969,6 +969,7 @@ message-area
 
 
 <body>
+    <form id="form1" runat="server">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -1063,7 +1064,7 @@ message-area
                                                             <li>
                                                                 <hr class="dropdown-divider">
                                                             </li>
-                                                            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                                                            <li><asp:Button ID="btnSignOut" runat="server" CssClass="dropdown-item" Text="Sign Out" OnClick="btnSignOut_Click" /></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -1120,14 +1121,14 @@ message-area
 
 
                                     <div class="send-box">
-                                        <form action="">
+                                      
                                             <input type="text" id="txtmessage" class="form-control" aria-label="message…" placeholder="Write message…">
                                             <span class="label">
                                                 <img class="img-fluid" id="attachment" src="https://mehedihtml.com/chatbox/assets/img/upload.svg" alt="image title">
                                             </span>
 
                                             <button type="button" id="btnsend"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                        </form>
+                                      
 
                                         <%--<div class="send-btns">
                                             <div class="attach">
@@ -1173,6 +1174,8 @@ message-area
 
     </section>
     <!-- char-area -->
+
+        </form>
 
     <%-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--%>
     <script>

@@ -23,5 +23,11 @@ namespace SignalRChat
 
             this.Header.DataBind();
         }
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
     }
 }
