@@ -27,7 +27,7 @@ namespace SignalRChat
         {
             Session.Clear();
             Session.Abandon();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Index.aspx");
         }
     }
 }

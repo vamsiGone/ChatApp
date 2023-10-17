@@ -567,7 +567,7 @@ message-area
             border-top: 1px solid #ccc;
         }
 
-            .send-box form {
+            .send-box div {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -575,8 +575,8 @@ message-area
             }
 
             .send-box .form-control {
-                display: block;
-                width: 85%;
+                display: inline-block;
+                width: 75%;
                 padding: 0.375rem 0.75rem;
                 font-size: 14px;
                 font-weight: 400;
@@ -604,9 +604,9 @@ message-area
                 margin-left: 1%;
             }
 
-        .send-box button i {
+                .send-box button i {
                     margin-right: 5px;
-        }
+                }
 
         button:focus {
             outline: 0;
@@ -625,6 +625,14 @@ message-area
             height: 20px;
             width: 20px;
             cursor: pointer;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 9px;
+        }
+
         }
 
 
@@ -873,22 +881,22 @@ message-area
             var code, Clist;
             if (userId == id) {
                 code = $('<a href="#" class="d-flex align-items-center">' +
-                    '<div class= "flex-shrink-0" ><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
+                    '<div class= "flex-shrink-0" ><img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
                     '<div class="flex-grow-1 ms-3"><h3>' + name + '</h3> <p>front end developer</p></div></a>');
 
                 Clist = $('<a href="#" class="d-flex align-items-center">' +
-                    '<div class= "flex-shrink-0" ><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
+                    '<div class= "flex-shrink-0" ><img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
                     '<div class="flex-grow-1 ms-3"><h3>' + name + '</h3> <p>front end developer</p></div></a>');
 
             }
             else {
                 code = $('<a href="#" class="d-flex align-items-center">' +
-                    '<div class= "flex-shrink-0" ><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
+                    '<div class= "flex-shrink-0" ><img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
                     '<div class="flex-grow-1 ms-3"><h3>' + name + '</h3> <p>front end developer</p></div></a>');
 
 
                 Clist = $('<a href="#" class="d-flex align-items-center">' +
-                    '<div class= "flex-shrink-0" ><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
+                    '<div class= "flex-shrink-0" ><img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img"><span class="active"></span></div>' +
                     '<div class="flex-grow-1 ms-3"><h3>' + name + '</h3> <p>front end developer</p></div></a>');
 
 
@@ -930,11 +938,11 @@ message-area
 
             var CurrUser = $('#hdUserName').val();
             var Side = 'sender';
-           /* var TimeSide = 'left';*/
+            /* var TimeSide = 'left';*/
 
             if (CurrUser == userName) {
                 Side = 'repaly';
-             /*   TimeSide = 'right';*/
+                /*   TimeSide = 'right';*/
 
             }
 
@@ -970,113 +978,114 @@ message-area
 
 <body>
     <form id="form1" runat="server">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
-    <!-- char-area -->
-    <section class="message-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="chat-area">
-                        <!-- chatlist -->
-                        <div class="chatlist">
-                            <div class="modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="chat-header">
-                                        <div class="msg-search">
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" aria-label="search">
-                                            <a class="add" href="#">
-                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/add.svg" alt="add"></a>
-                                        </div>
-
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="Open-tab" data-bs-toggle="tab" data-bs-target="#Open" type="button" role="tab" aria-controls="Open" aria-selected="true">Open</button>
-                                            </li>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="Closed-tab" data-bs-toggle="tab" data-bs-target="#Closed" type="button" role="tab" aria-controls="Closed" aria-selected="false">Closed</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <!-- chat-list -->
-                                        <div class="chat-lists">
-                                            <div class="tab-content" id="myTabContent">
-                                                <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
-                                                    <!-- chat-list -->
-                                                    <div class="chat-list" id="divcommon">
-                                                    </div>
-                                                    <!-- chat-list -->
-                                                </div>
-                                                <div class="tab-pane fade" id="Closed" role="tabpanel" aria-labelledby="Closed-tab">
-
-                                                    <!-- chat-list -->
-                                                    <div class="chat-list" id="divprivate">
-                                                    </div>
-                                                    <!-- chat-list -->
-                                                </div>
+        <!-- char-area -->
+        <section class="message-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="chat-area">
+                            <!-- chatlist -->
+                            <div class="chatlist">
+                                <div class="modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="chat-header">
+                                            <div class="msg-search">
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" aria-label="search">
+                                                <a class="add" href="#">
+                                                    <img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/add.svg" alt="add"></a>
                                             </div>
 
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="Open-tab" data-bs-toggle="tab" data-bs-target="#Open" type="button" role="tab" aria-controls="Open" aria-selected="true">Open</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="Closed-tab" data-bs-toggle="tab" data-bs-target="#Closed" type="button" role="tab" aria-controls="Closed" aria-selected="false">Closed</button>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <!-- chat-list -->
+
+                                        <div class="modal-body">
+                                            <!-- chat-list -->
+                                            <div class="chat-lists">
+                                                <div class="tab-content" id="myTabContent">
+                                                    <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
+                                                        <!-- chat-list -->
+                                                        <div class="chat-list" id="divcommon">
+                                                        </div>
+                                                        <!-- chat-list -->
+                                                    </div>
+                                                    <div class="tab-pane fade" id="Closed" role="tabpanel" aria-labelledby="Closed-tab">
+
+                                                        <!-- chat-list -->
+                                                        <div class="chat-list" id="divprivate">
+                                                        </div>
+                                                        <!-- chat-list -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- chat-list -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- chatlist -->
+                            <!-- chatlist -->
 
 
 
-                        <!-- chatbox -->
-                        <div class="chatbox" id="chatbox">
-                            <div class="modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="msg-head">
-                                        <div class="row">
-                                            <div class="col-8">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="chat-icon">
-                                                        <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="image title"></span>
-                                                    <div class="flex-shrink-0">
-                                                        <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img">
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h3>Mehedi Hasan</h3>
-                                                        <p>front end developer</p>
+                            <!-- chatbox -->
+                            <div class="chatbox" id="chatbox">
+                                <div class="modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="msg-head">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="chat-icon">
+                                                            <img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="image title"></span>
+                                                        <div class="flex-shrink-0">
+                                                            <img class="avatar" src="images/nat.jpg" alt="user img">
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h3>Common Group</h3>
+                                                            <p>Miss you.. prendzz.........</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <ul class="moreoption">
-                                                    <li class="navbar nav-item dropdown">
-                                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                                                            <%--   <li><a class="dropdown-item" href="#">Profile</a></li>--%>
-                                                            <li>
-                                                                <hr class="dropdown-divider">
-                                                            </li>
-                                                            <li><asp:Button ID="btnSignOut" runat="server" CssClass="dropdown-item" Text="Sign Out" OnClick="btnSignOut_Click" /></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
+                                                <div class="col-4">
+                                                    <ul class="moreoption">
+                                                        <li class="navbar nav-item dropdown">
+                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                                                <%--   <li><a class="dropdown-item" href="#">Profile</a></li> --%>
+                                                                <li>
+                                                                    <hr class="dropdown-divider">
+                                                                </li>
+                                                                
+                                                                 <li><asp:Button ID="btnSignOut" runat="server" CssClass="dropdown-item" Text="Sign Out" OnClick="btnSignOut_Click" OnClientClick="return confirm('Are you sure to LogOut..?');" /></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="modal-body">
-                                        <div class="msg-body">
-                                           <ul id="MessageBody">
-                                               <%-- <li class="sender">
+                                        <div class="modal-body">
+                                            <div class="msg-body">
+                                                <ul id="MessageBody">
+                                                    <%-- <li class="sender">
                                                     <p>Hey, Are you there? </p>
                                                     <span class="time">10:06 am</span>
                                                 </li>
@@ -1114,27 +1123,28 @@ message-area
                                                     <p>yes... on it</p>
                                                     <span class="time">junt now</span>
                                                 </li>--%>
-
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="send-box">
-                                      
-                                            <input type="text" id="txtmessage" class="form-control" aria-label="message…" placeholder="Write message…">
-                                            <span class="label">
-                                                <img class="img-fluid" id="attachment" src="https://mehedihtml.com/chatbox/assets/img/upload.svg" alt="image title">
-                                            </span>
+                                        <div class="send-box">
 
-                                            <button type="button" id="btnsend"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                      
 
-                                        <%--<div class="send-btns">
+                                            <div>
+                                                <input type="text" id="txtmessage" class="form-control" aria-label="message…" placeholder="Write message…">
+                                                <span class="label">
+                                                    <img class="avatar" id="attachment" src="https://mehedihtml.com/chatbox/assets/img/upload.svg" alt="image title">
+                                                </span>
+
+                                                <button type="button" id="btnsend"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                            </div>
+
+                                            <%--<div class="send-btns">
                                             <div class="attach">
                                                 <div class="button-wrapper">
                                                     <span class="label">
-                                                        <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/upload.svg" alt="image title">
+                                                        <img class="avatar" src="https://mehedihtml.com/chatbox/assets/img/upload.svg" alt="image title">
                                                         attached file 
                                                     </span>
                                                     <input type="file" name="upload" id="upload" class="upload-box" placeholder="Upload File" aria-label="Upload File">
@@ -1157,25 +1167,25 @@ message-area
                                                 </div>
                                             </div>
                                         </div>--%>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- chatbox -->
-                    <span id="time"></span>
-                    <input id="hdId" type="hidden" />
-                    <input id="PWCount" type="hidden" value="info" />
-                    <input id="hdUserName" type="hidden" />
+                        <!-- chatbox -->
+                        <span id="time"></span>
+                        <input id="hdId" type="hidden" />
+                        <input id="PWCount" type="hidden" value="info" />
+                        <input id="hdUserName" type="hidden" />
 
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </section>
-    <!-- char-area -->
+        </section>
+        <!-- char-area -->
 
-        </form>
+    </form>
 
     <%-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--%>
     <script>
